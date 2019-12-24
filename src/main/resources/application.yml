@@ -1,0 +1,40 @@
+spring:
+   application:
+      name: myretailweb
+   
+server:
+   port: 8090
+   servlet.contextPath: /myretailweb
+   
+cassandra.keyspace: shahriar
+
+logging:
+  level:
+    org.springframework: ERROR
+    com.myretail.casestudy: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+    file: "%d %p %c{1.} [%t] %m%n"
+  file: app.log
+  
+redskyendpoint: https://redsky.target.com/v2/pdp/tcin/%s?excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics
+
+---
+spring:
+   profiles: local
+
+cassandra:
+   host: 127.0.0.1
+   port: 9042
+
+---
+spring:
+   profiles: dev
+   
+---
+spring:
+   profiles: test
+   
+---
+spring:
+   profiles: prod
