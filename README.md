@@ -2,6 +2,14 @@
  
 myretail web service is a Spring Boot application. Once started it will be available at localhost:8090
 
+## To run
+
+You can run the application in your IDE (e.g. Eclipse or InteliJ) or on the command line:
+
+Windows example:
+
+C:\Users\Owner\workspace\myretailweb>java -Dspring.profiles.active=local -jar target\myretailweb-1.0.0-SNAPSHOT.jar
+
 ## Usage
 
 The web service provides two end points. A GET and a PUT.
